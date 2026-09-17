@@ -1,11 +1,19 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class Task {
-  final int? id;
+  const Task({required this.id, required this.title, required this.description, required this.completed, required this.createdAt});
+  final String id;
   final String title;
-  final String date;
-  final String level;
+  final String description;
   final bool completed;
-  const Task({this.id, required this.title, required this.date, required this.level, required this.completed});
-  Map<String, dynamic> toMap() => {'id': id, 'title': title, 'date': date, 'level': level, 'completed': completed ? 1 : 0};
-  factory Task.fromMap(Map<String, dynamic> map) => Task(id: map['id'] as int?, title: map['title'] as String, date: map['date'] as String, level: map['level'] as String, completed: map['completed'] == 1);
-  Task copyWith({bool? completed}) => Task(id: id, title: title, date: date, level: level, completed: completed ?? this.completed);
+  final DateTime createdAt;
+
+  factory Task.fromDocument(DocumentSnapshot<Map<String, dynamic>> document) {
+    final data = document.data() ?? <String, dynamic>{};
+    final timestamp = data['createdAt'];
+    return Task(id: document.id, title: data['title'] as String? ?? '', description: data['description'] as String? ?? '', completed: data['completed'] as bool? ?? false, createdAt: timestamp is Timestamp ? timestamp.toDate() : DateTime.now());
+  }
+
+  Map<String, dynamic> toMap() => {'title': title, 'description': description, 'completed': completed, 'createdAt': Timestamp.fromDate(createdAt)};
+  Task copyWith({String? title, String? description, bool? completed}) => Task(id: id, title: title ?? this.title, description: description ?? this.description, completed: completed ?? this.completed, createdAt: createdAt);
 }

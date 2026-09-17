@@ -1,0 +1,11 @@
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../providers/auth_provider.dart';
+
+class AuthScreen extends StatefulWidget { const AuthScreen({super.key}); @override State<AuthScreen> createState() => _AuthScreenState(); }
+class _AuthScreenState extends State<AuthScreen> {
+  final _formKey = GlobalKey<FormState>(); final _email = TextEditingController(); final _password = TextEditingController(); bool _signUp = false; bool _busy = false;
+  Future<void> _submit() async { if (!_formKey.currentState!.validate()) return; setState(() => _busy = true); final auth = context.read<AuthProvider>(); final success = _signUp ? await auth.signUp(_email.text, _password.text) : await auth.signIn(_email.text, _password.text); if (mounted) { setState(() => _busy = false); if (!success) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(auth.error ?? 'Request failed'))); } }
+  @override Widget build(BuildContext context) => Scaffold(body: Center(child: SingleChildScrollView(padding: const EdgeInsets.all(28), child: Form(key: _formKey, child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [Icon(Icons.task_alt, size: 72, color: Theme.of(context).colorScheme.primary), const SizedBox(height: 20), Text(_signUp ? 'Create account' : 'Welcome back', textAlign: TextAlign.center, style: Theme.of(context).textTheme.headlineMedium), const SizedBox(height: 28), TextFormField(controller: _email, keyboardType: TextInputType.emailAddress, decoration: const InputDecoration(labelText: 'Email'), validator: (value) => value == null || !value.contains('@') ? 'Enter a valid email' : null), const SizedBox(height: 14), TextFormField(controller: _password, obscureText: true, decoration: const InputDecoration(labelText: 'Password'), validator: (value) => value == null || value.length < 6 ? 'Use at least 6 characters' : null), const SizedBox(height: 20), FilledButton(onPressed: _busy ? null : _submit, child: Text(_busy ? 'Please wait...' : _signUp ? 'Sign up' : 'Sign in')), TextButton(onPressed: _busy ? null : () => setState(() => _signUp = !_signUp), child: Text(_signUp ? 'Already registered? Sign in' : 'Need an account? Sign up'))]))));
+  @override void dispose() { _email.dispose(); _password.dispose(); super.dispose(); }
+}
