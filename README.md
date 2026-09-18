@@ -116,7 +116,3 @@ lib/
 │   └── app_theme.dart
 └── firebase_options.dart
 ```
-
-## License
-
-This project is for educational/demo use and is suitable for submission or adaptation.
