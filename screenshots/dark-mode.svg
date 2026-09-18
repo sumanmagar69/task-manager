@@ -1,0 +1,67 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Dark Mode Theme</title>
+  <desc id="desc">Dark theme preview of the task manager app.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#101827"/>
+      <stop offset="100%" stop-color="#18233d"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1a243b"/>
+      <stop offset="100%" stop-color="#212d46"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#6d90ff"/>
+      <stop offset="100%" stop-color="#8a6bff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <g filter="url(#shadow)">
+    <rect x="110" y="80" width="980" height="740" rx="30" fill="url(#card)"/>
+  </g>
+  <rect x="150" y="120" width="250" height="660" rx="24" fill="#182336" stroke="#2a3a59"/>
+  <circle cx="275" cy="190" r="50" fill="url(#accent)"/>
+  <text x="275" y="205" text-anchor="middle" font-size="42" font-weight="700" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif">T</text>
+  <text x="275" y="285" text-anchor="middle" font-size="28" font-weight="700" fill="#edf4ff" font-family="Segoe UI, Arial, sans-serif">TaskFlow</text>
+
+  <rect x="190" y="340" width="170" height="48" rx="14" fill="#1f2d49"/>
+  <text x="230" y="372" font-size="20" font-weight="600" fill="#cfe1ff" font-family="Segoe UI, Arial, sans-serif">Overview</text>
+  <rect x="190" y="404" width="170" height="48" rx="14" fill="#162334" stroke="#2c3d5f"/>
+  <text x="230" y="436" font-size="20" fill="#e8f0ff" font-family="Segoe UI, Arial, sans-serif">Tasks</text>
+  <rect x="190" y="468" width="170" height="48" rx="14" fill="#162334" stroke="#2c3d5f"/>
+  <text x="230" y="500" font-size="20" fill="#e8f0ff" font-family="Segoe UI, Arial, sans-serif">Calendar</text>
+  <rect x="190" y="660" width="170" height="60" rx="17" fill="url(#accent)"/>
+  <text x="275" y="700" text-anchor="middle" font-size="20" font-weight="700" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif">Sign out</text>
+
+  <rect x="470" y="120" width="550" height="640" rx="26" fill="#132036" stroke="#253451"/>
+  <text x="515" y="180" font-size="34" font-weight="700" fill="#edf4ff" font-family="Segoe UI, Arial, sans-serif">My Tasks</text>
+  <rect x="515" y="210" width="180" height="48" rx="16" fill="#1e2d49"/>
+  <text x="560" y="243" font-size="20" font-weight="700" fill="#d5e8ff" font-family="Segoe UI, Arial, sans-serif">All Tasks</text>
+  <rect x="710" y="210" width="220" height="48" rx="16" fill="#162334" stroke="#2c3d5f"/>
+  <text x="765" y="243" font-size="20" fill="#dfeaff" font-family="Segoe UI, Arial, sans-serif">Due today</text>
+
+  <g>
+    <rect x="515" y="290" width="470" height="94" rx="18" fill="#1b2d48" stroke="#30466f"/>
+    <rect x="538" y="320" width="24" height="24" rx="6" fill="#69db9a"/>
+    <text x="575" y="341" font-size="24" font-weight="600" fill="#edf4ff" font-family="Segoe UI, Arial, sans-serif">Design landing page</text>
+    <text x="575" y="366" font-size="18" fill="#a4bbdf" font-family="Segoe UI, Arial, sans-serif">High priority • 9:00 AM</text>
+  </g>
+  <g>
+    <rect x="515" y="400" width="470" height="94" rx="18" fill="#162334" stroke="#30466f"/>
+    <rect x="538" y="430" width="24" height="24" rx="6" fill="#152238" stroke="#a0baf0" stroke-width="3"/>
+    <text x="575" y="451" font-size="24" font-weight="600" fill="#edf4ff" font-family="Segoe UI, Arial, sans-serif">Create Firebase config</text>
+    <text x="575" y="476" font-size="18" fill="#a4bbdf" font-family="Segoe UI, Arial, sans-serif">In progress • 11:30 AM</text>
+  </g>
+  <g>
+    <rect x="515" y="510" width="470" height="94" rx="18" fill="#162334" stroke="#30466f"/>
+    <rect x="538" y="540" width="24" height="24" rx="6" fill="#69db9a"/>
+    <text x="575" y="561" font-size="24" font-weight="600" fill="#edf4ff" font-family="Segoe UI, Arial, sans-serif">Review API contract</text>
+    <text x="575" y="586" font-size="18" fill="#a4bbdf" font-family="Segoe UI, Arial, sans-serif">Completed • 2:00 PM</text>
+  </g>
+
+  <rect x="845" y="640" width="120" height="48" rx="16" fill="url(#accent)"/>
+  <text x="905" y="672" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif">Add task</text>
+</svg>

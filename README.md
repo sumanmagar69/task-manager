@@ -6,8 +6,6 @@ A complete multi-screen Flutter task manager built with Firebase Authentication,
 
 ![Task Manager app preview](screenshots/task-manager-preview.svg)
 
-The screen above is a representative preview of the app interface. For submission, you can replace it with real screenshots or a short GIF/recording captured from your running app.
-
 ## Features implemented
 
 - Firebase Auth: email/password sign in, sign up, sign out, and persistent `authStateChanges` screen protection.
@@ -90,20 +88,12 @@ Then:
 
 ## Screenshots / recording
 
-You can add real screenshots in the `screenshots/` folder and reference them here.
+This project includes example UI previews for the required submission evidence. Replace these with real device captures if you want to submit authentic app screenshots from a live session.
 
-Example:
-
-```markdown
-![Sign in](screenshots/sign-in.png)
-![Task list](screenshots/task-list.png)
-![Edit task](screenshots/edit-task.png)
-![Dark mode](screenshots/dark-mode.png)
-```
-
-This repository includes a preview image at:
-
-- `screenshots/task-manager-preview.svg`
+![Sign in](screenshots/sign-in.svg)
+![Task list](screenshots/task-list.svg)
+![Edit task](screenshots/edit-task.svg)
+![Dark mode](screenshots/dark-mode.svg)
 
 ## Project structure
 
